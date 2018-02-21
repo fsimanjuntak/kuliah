@@ -1,0 +1,12 @@
+If you want to apply a new machine learning technique on existing training and evaluation set, please execute the following steps:
+- Execute 03_loadtrainingandvalidatinsets.R . Be aware with the location of your working directory
+- Create an R file that associates with the technique that you're going to apply, e.g. if you want to test Naive Classififier, just create a new R file named: 07_NaiveClassifier.R
+  Please note that the "07" indicates the sequence number of our code in order to make it clean and easier to understand. Just keep adding this number by one, if you wish to apply another technique.
+- At the end of your code, please add the following syntax:
+	#Save again the training and evaluation set to csv file so the output of your model can be loaded later
+	write.csv(x.train, file = "datasets/trainingset.csv")
+	write.csv(x.evaluate, file = "datasets/evaluationset.csv")
+
+- Then run your code
+- If everything goes well, you'll see a plot created based on the model you run. Save the plot to "/results" folder under this directory so we can use the plot in our report later on
+- Selamat mencoba

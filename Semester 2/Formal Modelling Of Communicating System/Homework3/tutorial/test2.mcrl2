@@ -1,0 +1,14 @@
+act
+ ins , acc , coin : Nat;
+ giveItem , takeItem , ready ; 
+proc
+ U(n:Nat) = ins(n).takeItem.U(n);
+ M = sum n:Nat.acc(n).giveItem.M;
+% M = sum n:Nat.(n<=10) -> acc(n).giveItem.M;
+init
+allow ({coin , ready} ,
+     comm(
+      { ins|acc -> coin, giveItem | takeItem -> ready} ,
+        U(10) || M
+    )
+);

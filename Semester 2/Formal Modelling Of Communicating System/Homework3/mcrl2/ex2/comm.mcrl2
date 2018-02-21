@@ -1,0 +1,26 @@
+act
+   acc, ack_in, ack_out, ack, error_in, error_out, error, send_in, send_out, send, del, trans_in, trans_out, trans;
+
+proc
+   % sender
+   Send    = acc.Sending;
+   Sending = send_out.Wait;
+   Wait    = ack_in.Send + error_in.Sending;
+   
+   %receiver
+   Rec     = trans_in.Del;
+   Del     = del.Ack;
+   Ack     = ack_out.Rec;
+
+   % a 'possibly' faulty medium
+   Med      = send_in.Med_other;
+   Med_other= Err + trans_out.Med;
+   Err      = error_out.Med;
+
+init
+   hide({error, send, trans, ack},
+      allow({acc, ack, error, send, del, trans},
+      comm({ack_in|ack_out->ack, error_in|error_out->error, send_in|send_out->send, trans_in|trans_out->trans},
+          Send||Med||Rec)
+      )
+   );

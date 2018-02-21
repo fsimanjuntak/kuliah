@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#exploratory data analysis\nlibrary(dplyr)\nlibrary(ggplot2)\n\n#histogram\n#CO2\nggplot(df, aes(x=CO2_60)) + geom_histogram()\nggplot(df, aes(x=CO2_7)) + geom_histogram()\n#H20\nggplot(df, aes(x=H2O_60)) + geom_histogram()\nggplot(df, aes(x=H2O_7)) + geom_histogram()\n#C0\nggplot(df, aes(x=CO_60)) + geom_histogram()\nggplot(df, aes(x=CO_7)) + geom_histogram()\n#COS\nggplot(df, aes(x=COS_60)) + geom_histogram()\nggplot(df, aes(x=COS_7)) + geom_histogram()\n\n#boxplot\n#CO2 per month\nggplot(df, aes( x= factor(season) , y=CO2_60))+geom_boxplot()\nggplot(df, aes( x= factor(season) , y=CO2_7))+geom_boxplot()\n\n#CO2 per season\nggplot(df, aes( x= factor(season) , y=CO2_60))+geom_boxplot()\nggplot(df, aes( x= factor(season) , y=CO2_7))+geom_boxplot()\n\n#scatter plot CO2 per month\nggplot(df, aes(x=season, y=CO2_60)) + geom_point(colour=\"red\")\nggplot(df, aes(x=season, y=CO2_7)) + geom_point(colour=\"red\")\n\n#scatter plot CO2 per month\nggplot(df, aes(x=datetime, y=CO2_60)) + geom_point(colour=\"red\")\nggplot(df, aes(x=datetime, y=CO2_7)) + geom_point(colour=\"red\")\n\n\n#get summary table *this result still wrong\nresult <- df %>% select(season, CO2_60, CO2_7)%>% filter(season == \"summer\"  | season == \"winter\")  %>% group_by(season) %>% summarise(Cmean_O2_60= mean(CO2_60), mean_CO2_7= mean(CO2_7), sd_CO2_60= sd(CO2_60), sd_CO2_7= sd(CO2_7))\nresult\n\n#qqplot\nrnorm_CO2_60 <- rnorm(df$CO2_60)\nqqnorm(rnorm_CO2_60)\nqqline(rnorm_CO2_60)\n\nrnorm_CO2_7 <- rnorm(df$CO2_7)\nqqnorm(rnorm_CO2_7)\nqqline(rnorm_CO2_7)\n\n\n\n\n\n\n\n\n",
+    "created" : 1508410990298.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2467547519",
+    "id" : "CE82E2FB",
+    "lastKnownWriteTime" : 1508417212,
+    "last_content_update" : 1508417212902,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Analysis and Statistical Methods/project/Final Project/exploratorydataanalysis.R",
+    "project_path" : "exploratorydataanalysis.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

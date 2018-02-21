@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#mthod 2 - linear model\n#Statistical methods\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(GGally)\nlibrary(lmodel2)\n\nz = lm(CO2_60~datetime, data=df)\n\nsummary(z)\n\n#plot lm\nggplot(df, aes(x=datetime, y=CO2_60)) + geom_point() +\n  geom_abline(intercept = z$coefficients[1],  # but add in the regression line\n             slope = z$coefficients[2])\n\n\ndf$fit = fitted(z)\ndf$res = residuals(z)\n\n\n\nggplot(df) + \n  geom_point(aes(x=datetime, y=CO2_60, color=\"original value\"), size=3) + \n  geom_point(aes(x=datetime, y=CO2_60, color=\"fitted value\"), size=3) + \n  geom_abline(intercept = z$coefficients[1], slope=z$coefficients[2])\n\n\n#res vs datetime\nggplot(df) + \n  geom_point(aes(x=datetime, y=res))\n\n#res vs fitted\nggplot(df, aes(x=fit, y=res)) + geom_point() + ggtitle(\"residual vs. fitted values\")\n\n#plot qqnorm\nqqnorm(df$res)\nqqline(df$res)",
+    "created" : 1508422146978.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1094231101",
+    "id" : "36C0613C",
+    "lastKnownWriteTime" : 1508423443,
+    "last_content_update" : 1508423443525,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Analysis and Statistical Methods/project/Final Project/methods2.R",
+    "project_path" : "methods2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

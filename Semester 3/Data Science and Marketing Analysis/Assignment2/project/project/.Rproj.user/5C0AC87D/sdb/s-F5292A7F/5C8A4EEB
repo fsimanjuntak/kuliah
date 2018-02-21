@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# SOME Summarizing plots:\n\nOverallTDL <- c(4.23,2.24,3.27,4.76,4.42,5.22,0.97)\nOverallGINI <- c(0.72,0.24,0.63,0.6,0.83,0.86,-0.02)\n\n\nForGraph <- data.frame(OverallTDL,OverallGINI)\n\nmyLeftAxisLabs <- pretty(seq(0, max(ForGraph$OverallTDL), length.out = 10))\nmyRightAxisLabs <- pretty(seq(0, max(ForGraph$OverallGINI), length.out = 10))\n\nmyLeftAxisAt <- myLeftAxisLabs/max(ForGraph$OverallTDL)\nmyRightAxisAt <- myRightAxisLabs/max(ForGraph$OverallGINI)\n\nForGraph$OverallTDL1 <- ForGraph$OverallTDL/max(ForGraph$OverallTDL)\nForGraph$OverallGINI1 <- ForGraph$OverallGINI/max(ForGraph$OverallGINI)\n\nop <- par(mar = c(5,4,4,4) + 0.1)\n\nbarplot(t(as.matrix(ForGraph[, c(\"OverallTDL1\", \"OverallGINI1\")])), beside = TRUE, yaxt = \"n\", names.arg = c(\"Log\",\"Neig\", \"Bay\",\"SVM\",\"Tr\",\"RF\",\"NN\"), ylim=c(0, max(c(myLeftAxisAt, myRightAxisAt))), ylab =\t\"Top Decile Lift\", legend = c(\"TDL\",\"GINI\"), main=\"Performance of the Machine Learning Algorithms\")\n\naxis(2, at = myLeftAxisAt, labels = myLeftAxisLabs)\n\naxis(4, at = myRightAxisAt, labels = myRightAxisLabs)\n\nmtext(\"GINI Coefficient\", side = 4, line = 3, cex = par(\"cex.lab\"))\n\nmtext(c(paste(round(5,digits=2),\"\"),\n        paste(round(352.69,digits=2),\"\"),\n        paste(round(12.35,digits=2),\"\"),\n        paste(round(5400,digits=2),\"\"),\n        paste(round(2.412),\"\"),\n        paste(round(72.94,digits=2),\"\"),\n        paste(round(449,digits=2),\"\")), side = 1, line = 3, cex = par(\"cex.lab\"), at = c(2.3,5,8,11,14,17,20))\nmtext(c(paste(round(0.8924181055922690*100,digits=0),\"%\"),\n        paste(round(0.892204931428977*100,digits=0),\"%\"),\n        paste(round(0.871882327861863*100,digits=0),\"%\"),\n        paste(round(0.894976195551766*100,digits=0),\"%\"),\n        paste(round(0.910040503091025*100,digits=0),\"%\"),\n        paste(round(0.887728273999858*100,digits=0),\"%\"),\n        paste(round(0.894016911816954*100,digits=0),\"%\")), side = 1, line = 4, cex = par(\"cex.lab\"), at = c(2.3,5,8,11,14,17,20))\n\n\n#Percentage <- c(0.892418105592269, 0.892204931428977, 0.871882327861863, 0.894976195551766, 0.910040503091025, 0.887728273999858, 0.894016911816954)\n\n\nmtext(\"time(sec)\", side = 1, line = 3, cex = par(\"cex.lab\"), at = -.8)\nmtext(\"correct\", side = 1, line = 4, cex = par(\"cex.lab\"), at = -.8)\n",
+    "created" : 1509310816051.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "397544444",
+    "id" : "5C8A4EEB",
+    "lastKnownWriteTime" : 1509314686,
+    "last_content_update" : 1509314686730,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Science and Marketing Analysis/Assignment2/project/project/final_code/performancemachinelearning.R",
+    "project_path" : "final_code/performancemachinelearning.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

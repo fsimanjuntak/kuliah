@@ -1,0 +1,113 @@
+Get IP - with ethernet
+
+cat /var/lib/misc/dnsmasq.leases
+
+
+ssh pi@10.42.0.47
+
+username : pi
+password: password
+
+ifconfig eth0
+- Mac address: b8:27:eb:f4:11:33
+
+
+129.125.5.133
+ss
+cd bin
+./moquette.sh
+
+wget https://bintray.com/artifact/download/andsel/generic/distribution-0.8-bundle-tar.tar.gz
+tar zxf distribution-0.8-bundle-tar.tar.gz
+cd bin
+./moquette.sh
+
+
+nmap -sP 192.168.1.0/24 >/dev/null && arp -an | grep b8:27:eb:f4:11:33 | awk '{print $2}' | sed 's/[()]//g'
+
+
+
+
+dmesg | grep tty
+sudo screen /dev/ttyUSB0 115200
+
+
+
+http://elinux.org/RPI-Wireless-Hotspot
+
+#start access point
+sudo service hostapd start
+sudo service udhcpd start
+
+#verify status
+sudo service hostapd status
+sudo service udhcpd status
+sudo ifconfig
+sudo iwconfig
+
+
+java -jar smappee-local-mqtt-1.0.0.jar "/home/pi/Desktop/SmappeeProject/nilm-smappee/jars/"
+
+java -jar smappee-local-mqtt-1.0.0.jar "home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/smappee-project/smappee-local-mqtt/"
+
+
+username = "pratama"
+password = "hs6AM9FQUsDy57EK"
+
+
+
+
+
+
+SMAPPEE_RP3_HOTSPOT
+wpa=2
+wpa_passphrase=password
+
+./ap.sh SMAPPEE_RP3_HOTSPOT password
+
+
+
+sbt 'inspect sbtVersion': 0.13.15
+scala -version : 2.11.6
+
+server = "amqp://129.125.84.131:5672"
+
+//APi testing
+http://129.125.84.131:8080/sensor-data-rest/latest?sensorid=insert-your-sensor-id&instanceid=insert-your-instance-id 
+
+build jar:
+http://stackoverflow.com/questions/574594/how-can-i-create-an-executable-jar-with-dependencies-using-maven
+
+mvn clean compile assembly:single
+
+cd /opt/android/android-studio/bin
+./androidstudio
+
+--Deploy sbt
+sbt nilm-smappeecore/universal:packageBin
+
+Gathering data
+--Azka monitor 1 (Wednesday 3 May 2017, 18:31)
+
+
+
+--screen
+screen -ls (list screen)
+screen -r screen_name (see screen)
+ctrl+a+d (quit from screen)
+screen -X -S screen_name (delete screen)
+
+Location screen script: /usr/bin/run_smappee.sh
+
+
+
+https://www.raspberrypi.org/forums/viewtopic.php?f=91&t=48958 (akses file in usb)
+
+
+####MQTT
+https://www.raspberrypi.org/forums/viewtopic.php?t=191027
+sudo service mosquitto stop
+sudo service mosquitto start
+systemctl status mosquitto.service
+
+

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "############ Naive Bayes ###############3\nptm <- proc.time()\nlibrary(e1071)\nclassifier<-naiveBayes(BaseFormula,data=x.train[,1:13]) \nnaiveBayesCorrect <- table(predict(classifier, x.evaluate[,1:12]), x.evaluate[,13])\n\nprint(paste(\"% of predicted classifications correct\", sum(diag(naiveBayesCorrect))/sum(naiveBayesCorrect) )) \nnaiveBayesPredict <- predict(classifier, x.evaluate[,1:11], type = \"raw\")\nnaiveBayesOutput <- makeLiftPlot(naiveBayesPredict[,1],x.evaluate,\"Naive Bayes\")\n\nTimeAux <- proc.time() - ptm \nnaiveBayesOutput$TimeElapsed <- TimeAux[3]\nnaiveBayesOutput$PercCorrect <- sum(diag(naiveBayesCorrect))/sum(naiveBayesCorrect)*100\nrm(TimeAux)\n\n#update machine laerning properties\nnewmachinelearningproperties <- getMachineLearningProperties(\"Naive Bayes\",naiveBayesOutput)\nmachinelearning.properties <- rbind(machinelearning.properties,newmachinelearningproperties)\n#Save again the training and evaluation set so the output of your model can be loaded later\nwrite.csv(machinelearning.properties, file = \"datasets/ml_performances\")\n\n\n",
+    "created" : 1509302093367.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "8626738",
+    "id" : "5D41EED9",
+    "lastKnownWriteTime" : 1509305423,
+    "last_content_update" : 1509305423500,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Science and Marketing Analysis/Assignment2/project/project/final_code/07_NaiveBayes.R",
+    "project_path" : "final_code/07_NaiveBayes.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

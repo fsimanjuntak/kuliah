@@ -1,0 +1,9 @@
+act
+   a, b, c;
+
+proc
+   P = a.P1;
+   P1 = b.P + c.P;
+
+init
+   P;

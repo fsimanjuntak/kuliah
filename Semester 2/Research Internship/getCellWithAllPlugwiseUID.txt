@@ -1,0 +1,28 @@
+function [cellWithAllPlugwiseUID] = getCellWithAllPlugwiseUID()
+cellWithAllPlugwiseUID = {...
+          1  '000D6F0000431B65',... % Aggregated: Azka (5 devices) Brian (4 devices) + always ON devices (hubs + rasp.pi)
+          2  '000D6F00004321CE',... % Azka Laptop
+          3  '000D6F000043AFB4',... % Azka PC
+          4  '000D6F0000431B35',... % Azka Monitor1(iiyama)
+          5  '000D6F000043B04C',... % Azka Monitor2 (Philips)
+          6  '000D6F000046A0E0',... % Base station (Brian Laptop).
+          7  '000D6F0000431B18',... % Brian's Monitor1(HP_old)
+          8  '000D6F00004321F9',... % Brian's Monitor2(HP_new)
+          9  '000D6F000043AFC0',... % LinkSys Switch)
+          10  '000D6F0000469E2F', ... % Laura Monitor1 (Philips)
+          11  '000D6F000043AF2E', ... % Laura Monitor2 (iiyama)
+          12  '000D6F000043AFBB', ... % Laura Docking Laptop
+          13  '000D6F00004698F1', ... % 564 - Michel Thin client PC
+          14  '000D6F00004698E8', ... % 564 - Michel Screen
+          15  '000D6F000043B291', ... % 562 - Alexander ceiling Lighting
+          16  '000D6F000043B290', ... % 562 - Alexander Aggregated all devices
+          17  '000D6F00004BA0F4', ... % 562 - Alexander PC
+          18  '000D6F0000B7E6D9', ... % 562 - Alexander Monitor-1
+          19  '000D6F0000B814FB', ... % 562 - Alexander Monitor-2
+          20  '000D6F0000B83221', ... % 562 - Alexander Laptop
+          21  '000D6F0000B810FA', ... % 562 - Alexander Set of speaker
+          22  '000D6F0000B81093', ... % 562 - Alexander printer
+          23  '000D6F00004321D4' % 564 ceiling lighting
+    };
+end
+

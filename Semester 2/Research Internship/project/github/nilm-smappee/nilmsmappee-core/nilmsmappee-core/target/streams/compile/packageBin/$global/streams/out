@@ -1,0 +1,85 @@
+[0m[[0minfo[0m] [0mPackaging /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/nilmsmappee-core_2.11-0.1-SNAPSHOT.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/app/NilmsmappeecoreMain.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/app/NilmsmappeecoreMain.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/GroundTruthData$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/GroundTruthData$.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$2$$anonfun$apply$3.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$2$$anonfun$apply$3.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/ReceivedSmappeeData$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/ReceivedSmappeeData$.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeCoreRestRoute$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeCoreRestRoute$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeJsonProtocol$class.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeJsonProtocol$class.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/NilmSmappeeImpl$$anonfun$postGroundTruth$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/NilmSmappeeImpl$$anonfun$postGroundTruth$1.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/NilmSmappeeSettings$class.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/NilmSmappeeSettings$class.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$5$$anonfun$apply$6.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$5$$anonfun$apply$6.class[0m
+[0m[[0mdebug[0m] [0m	nilmsmappeecore[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/nilmsmappeecore[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$2.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$2.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeCoreRestRoute.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeCoreRestRoute.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/app/NilmsmappeecoreMain$delayedInit$body.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/app/NilmsmappeecoreMain$delayedInit$body.class[0m
+[0m[[0mdebug[0m] [0m	nilmsmappeecore/BuildInfo.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/nilmsmappeecore/BuildInfo.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/ReceivedGroundTruthData.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/ReceivedGroundTruthData.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeData.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeData.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/ReceivedSmappeeData.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/ReceivedSmappeeData.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/app[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/app[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/app/NilmsmappeecoreMain$$anon$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/app/NilmsmappeecoreMain$$anon$1.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$apply$4.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$apply$4.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeJsonProtocol.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeJsonProtocol.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$5.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$5.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/NilmSmappee.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/NilmSmappee.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeData$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeData$.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/NilmSmappee$class.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/NilmSmappee$class.class[0m
+[0m[[0mdebug[0m] [0m	nilmsmappeecore/BuildInfo$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/nilmsmappeecore/BuildInfo$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	nilmsmappeecore/BuildInfo$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/nilmsmappeecore/BuildInfo$.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/app/NilmsmappeecoreMain$$anon$1$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/app/NilmsmappeecoreMain$$anon$1$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/NilmSmappeeImpl.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/NilmSmappeeImpl.class[0m
+[0m[[0mdebug[0m] [0m	rugds[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeCoreRestRoute$class.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeCoreRestRoute$class.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/NilmSmappeeImpl$$anonfun$postSmappeeData$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/NilmSmappeeImpl$$anonfun$postSmappeeData$1.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/GroundTruthData.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/GroundTruthData.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/NilmSmappeeApi.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/NilmSmappeeApi.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/app/NilmsmappeecoreMain$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/app/NilmsmappeecoreMain$.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/ReceivedGroundTruthData$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/ReceivedGroundTruthData$.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$5$$anonfun$apply$6$$anonfun$apply$7.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/SmappeeCoreRestRoute$$anonfun$1$$anonfun$apply$1$$anonfun$apply$5$$anonfun$apply$6$$anonfun$apply$7.class[0m
+[0m[[0mdebug[0m] [0m	rugds/nilm/NilmSmappeeSettings.class[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/rugds/nilm/NilmSmappeeSettings.class[0m
+[0m[[0mdebug[0m] [0m	application.conf[0m
+[0m[[0mdebug[0m] [0m	  /home/frans/Desktop/Kuliah/Semester 2/Research Internship/project/github/nilm-smappee/nilmsmappee-core/nilmsmappee-core/target/scala-2.11/classes/application.conf[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

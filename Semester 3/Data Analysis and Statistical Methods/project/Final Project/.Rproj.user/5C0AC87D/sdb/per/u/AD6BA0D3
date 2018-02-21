@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(tidyverse)\nlibrary(forecast)\n\nsetwd(\"/home/frans/Desktop/Kuliah/Semester 3/Data Analysis and Statistical Methods/Assignments/Assignment 6\")\n\ndf <- read.csv(file = \"Pr_20May1(1).csv\", header = TRUE)\n\n#rename the column\nnames(df)[1]<-\"temperature\"\n\n#create a squence month from 1946 to december 2014\ndf$t = seq(from = as.Date(\"1946-01-01\"), to = as.Date(\"2014-12-31\"), by=\"1 month\")\n\n#time series\nt_ser <- ts(df$temperature, start = c(1946, 1),end = c(2014, 12), freq = 12)\n\n#decompose the time series using stl\noutput = stl(t_ser, s.window = 25, t.window = (1.5 * 12)/(1 - 1/12))\n\n#plot the time series decompostion using stl\nplot(output)\n",
+    "created" : 1508435116110.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1321400719",
+    "id" : "AD6BA0D3",
+    "lastKnownWriteTime" : 4,
+    "last_content_update" : 1508435326135,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

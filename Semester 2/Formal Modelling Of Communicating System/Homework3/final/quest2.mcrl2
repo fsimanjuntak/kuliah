@@ -1,0 +1,15 @@
+act
+ giveItemA, giveItemB, giveItemC, takeItem;
+ ins, acc, coin: Nat;
+proc
+ M = sum i:Nat.acc(i).((i == 10) -> giveItemA <>
+                      (i == 20) -> giveItemB <>
+                                   giveItemC).M;
+ U(n: Nat) = ins(n).takeItem.U(n);
+init
+ allow ({coin, giveItemA, giveItemB, giveItemC},
+   comm (
+        {ins|acc -> coin},
+          U(10) || M
+    )
+);

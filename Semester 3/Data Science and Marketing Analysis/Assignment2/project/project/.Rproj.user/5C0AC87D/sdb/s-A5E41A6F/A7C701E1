@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "## Nearest Neighbour ##\nlibrary(caret)\n\nptm <- proc.time()\n\nNearN <- knn3(BaseFormula, data=x.train, k=10, prob = FALSE, use.all = TRUE)\nx.evaluate$predictionNearN <- predict(NearN, newdata = x.evaluate, type=\"class\")\nx.evaluate$correctNearN <- x.evaluate$predictionNearN == x.evaluate$SaleString\n\nprint(paste(\"% of predicted classifications correct\", mean(x.evaluate$correctNearN)))\nx.evaluate$probabilitiesNearN <- predict(NearN, newdata = x.evaluate, type=\"prob\")[,1]\nNearNOutput <- makeLiftPlot(x.evaluate$probabilitiesNearN,x.evaluate,\"Nearest Neighbour\")\n\nTimeAux <- proc.time() - ptm \nNearNOutput$TimeElapsed <- TimeAux[3]\nNearNOutput$PercCorrect <- mean(x.evaluate$correctNearN)*100\nrm(TimeAux)\n\n#update machine laerning properties\nnewmachinelearningproperties <- getMachineLearningProperties(\"Nearest Neighbour\",NearNOutput)\nmachinelearning.properties <- rbind(machinelearning.properties,newmachinelearningproperties)\n#Save again the training and evaluation set so the output of your model can be loaded later\nwrite.csv(machinelearning.properties, file = \"datasets/ml_performances\")\n\n",
+    "created" : 1509306513810.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "489725637",
+    "id" : "A7C701E1",
+    "lastKnownWriteTime" : 1509306564,
+    "last_content_update" : 1509306564925,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Science and Marketing Analysis/Assignment2/project/project/final_code/08_Nearest_Neigborhood.R",
+    "project_path" : "final_code/08_Nearest_Neigborhood.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

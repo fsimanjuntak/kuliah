@@ -1,0 +1,33 @@
+act
+   acc, error_in, del,
+   error_out, error, finished_in,
+   finished_out, finished;
+
+   send_in, send_out, send,
+   trans_in, trans_out, trans,
+   ack_in, ack_out, ack:Nat;
+
+proc
+   % sender
+   Send(list:List(Nat)) = acc.Sending(head(list)).finished_in.Send(tail(list));
+   Sending(n:Nat)       = send_out(n).Wait(n);
+   Wait(n:Nat)          = ack_in(n).finished_out + error_in.Sending(n);
+   
+   %receiver
+   Rec       = sum n:Nat.(n <= 6)->trans_in(n).Del(n);
+   Del(n:Nat)= del.Ack(n);
+   Ack(n:Nat)= ack_out(n).Rec;
+
+   % a 'possibly' faulty medium
+   Med      = sum n:Nat.(n <= 6)->send_in(n).Med_other;
+   Med_other= sum n:Nat.(n <= 6)->(Err + trans_out(n).Med);
+   Err      = error_out.Med;
+
+init
+   hide({error, send, trans, ack},
+      allow({acc, ack, error, send, del, trans},
+      comm({ack_in|ack_out->ack, error_in|error_out->error,
+           send_in|send_out->send, trans_in|trans_out->trans},
+          Send([3453345, 2334123, 6564322, 4342312, 5432543, 5432555])||Med||Rec)
+      )
+   );

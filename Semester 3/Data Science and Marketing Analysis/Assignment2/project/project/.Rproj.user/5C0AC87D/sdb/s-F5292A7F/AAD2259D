@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(dplyr)\nlibrary(GGally)\nlibrary(lmodel2)\n#library(tidyverse)\n\n\ndf = read.csv(file = \"datasets/Assignment1_dataset_v3.csv\", header = TRUE)\n#convert date to date object\ndf$date <- as.Date(as.factor(df$date),\"%Y-%m-%d\")\n#get the month name from date object\ndf$month <- format(df$date, \"%b\")\n\ndf$season <- ifelse(df$date >= \"2017-01-01\" & df$date<\"2017-02-28\", \"winter\", ifelse(df$date >= \"2017-06-01\" & df$date<\"2017-07-31\", \"summer\",\"spring\"))\n\n\n##################### T-Test #############################\n#We define season by using these formula\n#winter = [month --> 1,2]\n#spring = [month --> 3,4,5]\n#summer = [month --> 6,7]\n\n#get the winter data\nwinter_data <- df %>% select(number_items_sold, date) %>% filter(date >= \"2017-01-01\" & date<\"2017-02-28\") %>% select(number_items_sold)\n\n#get the summer data\nsummer_data <- df %>% select(number_items_sold, date) %>% filter(date >= \"2017-06-01\" & date<\"2017-07-31\") %>% select(number_items_sold)\n\n#get the spring data\nspring_data <- df %>% select(number_items_sold, date) %>% filter(date >= \"2017-03-01\" & date<\"2017-05-31\") %>% select(number_items_sold)\n\n\n\n#The null hypothesis: the total item sold in summer is equal with the item sales in winter\n#The alternative : The total item sold in summer is higher than in winter\n#m1 - m2 = 0\n#m1 - m2 > 0\n#alpha = 0.05 (95% confidence interval)\n#rejection region: Reject Ho if the t_test > t_alpha\n\n#1. Compare the item sales  between summer and winter\n#lets perform two sample t-test\nt_test<- t.test(summer_data, winter_data,\n                alternative = c(\"greater\"),\n                mu = 0, paired = FALSE, var.equal = FALSE,\n                conf.level = 0.95)\n\n#get the t-alpha 0.05\nt_alpha <- qt(0.95 , t_test$parameter)\n\n#t_test: 17.433, t_alpha: 1.66864\n#Since the t_value is greater than t_alpha therefore we reject the null hypothesis\n\n#2. compare the item sales  between the summer and spring\n#now lets perform two sample t-test\nt_test<- t.test(summer_data, spring_data,\n                alternative = c(\"greater\"),\n                mu = 0, paired = FALSE, var.equal = FALSE,\n                conf.level = 0.95)\n\n#get the t-alpha 0.05\nt_alpha <- qt(0.95 , t_test$parameter)\n\n#t_test: 8.5805, t_alpha: 1.658833\n#Since the t_value is greater than t_alpha therefore we reject the null hypothesis\n\n#3. compare the item sales  between the winter and spring\n#lets perform two sample t-test\nt_test<- t.test(winter_data, spring_data,\n                alternative = c(\"greater\"),\n                mu = 0, paired = FALSE, var.equal = FALSE,\n                conf.level = 0.95)\n\n#get the t-alpha 0.05\nt_alpha <- qt(0.95 , t_test$parameter)\n\n#t_test: -10.582, t_alpha: 1.658939\n#Since the t_value is greater than t_alpha therefore we can not reject the null hypothesis\n\n\n##################### Two way ANOVA-Test ###############################################\ntwowayanova = aov(number_items_sold~season+TG_avg_temp+FG_avg_wind+SQ_sunshine+RH_precipitation+NG_avg_cloud+UG_humidity, data=df)\nsummary(twowayanova)\n\n#################### Linier Regression ####################################\nz1 = lm(number_items_sold~TG_avg_temp+FG_avg_wind+SQ_sunshine+RH_precipitation+NG_avg_cloud+UG_humidity, data=df)\nz2 = lm(number_items_sold~TG_avg_temp+SQ_sunshine, data=df)\nsummary(z1)\nsummary(z2)\n\n###### Test the regression using ANOVA #######\nresults = anova(z1, z2)\nprint(results)\n",
+    "created" : 1509314986895.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2578662228",
+    "id" : "AAD2259D",
+    "lastKnownWriteTime" : 1509307824,
+    "last_content_update" : 1509307824,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Science and Marketing Analysis/Assignment2/project/project/final_code/StatisticTest.R",
+    "project_path" : "final_code/StatisticTest.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,13 @@
+act
+ insertCoin,acceptCoin,takeCoffee,giveCoffee,submitPub,coin,coffee;
+proc
+ CM= acceptCoin.giveCoffee.CM; 
+ CS= submitPub.insertCoin.takeCoffee.CS;
+ SMUni = CM || CS;
+init 
+ hide({coin,coffee},
+ block({insertCoin,acceptCoin,takeCoffee,giveCoffee},
+  comm({ insertCoin|acceptCoin -> coin,
+         giveCoffee|takeCoffee -> coffee},
+     SMUni
+ )));

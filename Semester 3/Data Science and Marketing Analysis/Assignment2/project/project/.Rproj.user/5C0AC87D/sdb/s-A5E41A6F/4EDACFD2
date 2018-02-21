@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "############ RANDOM FOREST\nptm <- proc.time()\n# Create a model using \"random forest and bagging ensemble algorithms\nlibrary(randomForest)\n\nx.modelRF <- randomForest(BaseFormula, data=x.train, control = cforest_unbiased(mtry = 3)) \n\n# Use the model to predict the evaluation.\nx.evaluate$predictionRF <- predict(x.modelRF, newdata=x.evaluate, type = \"response\")\n\n# Calculate the overall accuracy.\nx.evaluate$correctRF <- x.evaluate$predictionRF == x.evaluate$SaleString\nprint(paste(\"% of predicted classifications correct\", mean(x.evaluate$correctRF)))\n\n# Extract the class probabilities.\nx.evaluate$probabilitiesRF <- predict(x.modelRF,newdata=x.evaluate,type=\"prob\")[,1]\nRFOutput <- makeLiftPlot(x.evaluate$probabilitiesRF,x.evaluate,\"Random Forest\")\n\nTimeAux <- proc.time() - ptm \nRFOutput$TimeElapsed <- TimeAux[3]\nRFOutput$PercCorrect <- mean(x.evaluate$correctRF)*100\nrm(TimeAux)\n\n#update machine laerning properties\nnewmachinelearningproperties <- getMachineLearningProperties(\"Random Forest\",RFOutput)\nmachinelearning.properties <- rbind(machinelearning.properties,newmachinelearningproperties)\n#Save again the training and evaluation set so the output of your model can be loaded later\nwrite.csv(machinelearning.properties, file = \"datasets/ml_performances\")\n",
+    "created" : 1509305377735.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1803329230",
+    "id" : "4EDACFD2",
+    "lastKnownWriteTime" : 1509305852,
+    "last_content_update" : 1509305852199,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Science and Marketing Analysis/Assignment2/project/project/final_code/RandomForest.R",
+    "project_path" : "final_code/RandomForest.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "######### LOGIT ############\nptm <- proc.time()\nSession_logit <- glm(BaseFormula1 , data = x.train, family = \"binomial\")\nsummary(Session_logit)\n\nx.evaluate$predictionlogit <- predict(Session_logit, newdata=x.evaluate, type = \"response\")\nx.evaluate$predictionlogitclass[x.evaluate$predictionlogit>.5] <- \"Buy\"\nx.evaluate$predictionlogitclass[x.evaluate$predictionlogit<=.5] <- \"NotBuy\"\n\nx.evaluate$correctlogit <- x.evaluate$predictionlogitclass == x.evaluate$SaleString\nprint(paste(\"% of predicted classifications correct\", mean(x.evaluate$correctlogit)))\nLogitOutput <- makeLiftPlot(x.evaluate$predictionlogit,x.evaluate,\"Logit\")\n\nTimeAux <- proc.time() - ptm \nLogitOutput$TimeElapsed <- TimeAux[3]\nLogitOutput$PercCorrect <- mean(x.evaluate$correctlogit)*100\nrm(TimeAux)\n\n#update machine laerning properties\nnewmachinelearningproperties <- getMachineLearningProperties(\"Logit\",LogitOutput)\nmachinelearning.properties <- rbind(machinelearning.properties,newmachinelearningproperties)\n#Save again the training and evaluation set so the output of your model can be loaded later\nwrite.csv(machinelearning.properties, file = \"datasets/ml_performances\")\n\n",
+    "created" : 1509306987457.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1388811229",
+    "id" : "377D6520",
+    "lastKnownWriteTime" : 1509307093,
+    "last_content_update" : 1509307093801,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Science and Marketing Analysis/Assignment2/project/project/final_code/04_logisticregression.R",
+    "project_path" : "final_code/04_logisticregression.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

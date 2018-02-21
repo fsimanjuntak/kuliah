@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "########## Neural network ############\nlibrary(nnet)\nlibrary(caret)\n\nptm <- proc.time()\nx.modelNNet <- train(BaseFormula, data=x.train, method='nnet', trControl=trainControl(method='cv')) \n\nx.evaluate$predictionNNet <- predict(x.modelNNet, newdata = x.evaluate, type=\"raw\")\nx.evaluate$correctNNet <- x.evaluate$predictionNNet == x.evaluate$SaleString\nprint(paste(\"% of predicted classifications correct\", mean(x.evaluate$correctNNet)))\n\nx.evaluate$probabilitiesNNet <- predict(x.modelNNet, newdata = x.evaluate, type='prob')[,1]\nNNetOutput <- makeLiftPlot(x.evaluate$probabilitiesNNet,x.evaluate,\"Neural Network\")\n\nTimeAux <- proc.time() - ptm \nNNetOutput$TimeElapsed <- TimeAux[3]\nNNetOutput$PercCorrect <- mean(x.evaluate$correctNNet)*100\nrm(TimeAux)\n\n#update machine laerning properties\nnewmachinelearningproperties <- getMachineLearningProperties(\"Neural Network\",NNetOutput)\nmachinelearning.properties <- rbind(machinelearning.properties,newmachinelearningproperties)\n#Save again the training and evaluation set so the output of your model can be loaded later\nwrite.csv(machinelearning.properties, file = \"datasets/ml_performances\")\n\n",
+    "created" : 1509307204031.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "843517117",
+    "id" : "1FD12D83",
+    "lastKnownWriteTime" : 1509307323,
+    "last_content_update" : 1509307323863,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Science and Marketing Analysis/Assignment2/project/project/final_code/06_neuralnetworks.R",
+    "project_path" : "final_code/06_neuralnetworks.R",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

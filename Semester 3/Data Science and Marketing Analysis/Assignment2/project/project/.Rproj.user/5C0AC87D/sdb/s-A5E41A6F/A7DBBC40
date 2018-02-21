@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# SOME Summarizing plots:\n\nOverallTDL <- c(LogitOutput$TDL,NearNOutput$TDL,naiveBayesOutput$TDL,SVMOutput$TDL,TreeOutput$TDL,RFOutput$TDL,NNetOutput$TDL)\nOverallGINI <- c(LogitOutput$GINI,NearNOutput$GINI,naiveBayesOutput$GINI,SVMOutput$GINI,TreeOutput$GINI,RFOutput$GINI,NNetOutput$GINI)\n\nForGraph <- data.frame(OverallTDL,OverallGINI)\n\nmyLeftAxisLabs <- pretty(seq(0, max(ForGraph$OverallTDL), length.out = 10))\nmyRightAxisLabs <- pretty(seq(0, max(ForGraph$OverallGINI), length.out = 10))\n\nmyLeftAxisAt <- myLeftAxisLabs/max(ForGraph$OverallTDL)\nmyRightAxisAt <- myRightAxisLabs/max(ForGraph$OverallGINI)\n\nForGraph$OverallTDL1 <- ForGraph$OverallTDL/max(ForGraph$OverallTDL)\nForGraph$OverallGINI1 <- ForGraph$OverallGINI/max(ForGraph$OverallGINI)\n\nop <- par(mar = c(5,4,4,4) + 0.1)\n\nbarplot(t(as.matrix(ForGraph[, c(\"OverallTDL1\", \"OverallGINI1\")])), beside = TRUE, yaxt = \"n\", names.arg = c(\"Logit\",\"N. Neighbour\", \"Naive Bayes\",\"SVM\",\"Tree\",\"Random Forest\",\"Neural Network\"), ylim=c(0, max(c(myLeftAxisAt, myRightAxisAt))), ylab =\t\"Top Decile Lift\", legend = c(\"TDL\",\"GINI\"), main=\"Performance of the Machine Learning Algorithms\")\n\naxis(2, at = myLeftAxisAt, labels = myLeftAxisLabs)\n\naxis(4, at = myRightAxisAt, labels = myRightAxisLabs)\n\nmtext(\"GINI Coefficient\", side = 4, line = 3, cex = par(\"cex.lab\"))\n\nmtext(c(paste(round(LogitOutput$TimeElapsed,digits=2),\"sec\"),\n        paste(round(NearNOutput$TimeElapsed,digits=2),\"sec\"),\n        paste(round(naiveBayesOutput$TimeElapsed,digits=2),\"sec\"),\n        paste(round(SVMOutput$TimeElapsed,digits=2),\"sec\"),\n        paste(round(TreeOutput$TimeElapsed,digits=2),\"sec\"),\n        paste(round(RFOutput$TimeElapsed,digits=2),\"sec\"),\n        paste(round(NNetOutput$TimeElapsed,digits=2),\"sec\")), side = 1, line = 3, cex = par(\"cex.lab\"), at = c(2,5,8,11,14,17,20,23,26))\nmtext(c(paste(round(LogitOutput$PercCorrect,digits=0),\"%\"),\n        paste(round(NearNOutput$PercCorrect,digits=0),\"%\"),\n        paste(round(naiveBayesOutput$PercCorrect,digits=0),\"%\"),\n        paste(round(SVMOutput$PercCorrect,digits=0),\"%\"),\n        paste(round(TreeOutput$PercCorrect,digits=0),\"%\"),\n        paste(round(RFOutput$PercCorrect,digits=0),\"%\"),\n        paste(round(NNetOutput$PercCorrect,digits=0),\"%\")), side = 1, line = 4, cex = par(\"cex.lab\"), at = c(2,5,8,11,14,17,20,23,26))\n\nmtext(\"Calc. time\", side = 1, line = 3, cex = par(\"cex.lab\"), at = -.8)\nmtext(\"% correct\", side = 1, line = 4, cex = par(\"cex.lab\"), at = -.8)\n",
+    "created" : 1509308128845.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4027904451",
+    "id" : "A7DBBC40",
+    "lastKnownWriteTime" : 1509308261,
+    "last_content_update" : 1509308261595,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Science and Marketing Analysis/Assignment2/project/project/performanceofmachinelearning.R",
+    "project_path" : "performanceofmachinelearning.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

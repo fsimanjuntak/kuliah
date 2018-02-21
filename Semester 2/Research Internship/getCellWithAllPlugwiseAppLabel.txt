@@ -1,0 +1,28 @@
+function [cellWithAllPlugwiseAppLabel] = getCellWithAllPlugwiseAppLabel()
+        cellWithAllPlugwiseAppLabel = {...
+            'aggr-azka-brian',... % Aggregated: Azka (5 devices) Brian (4 devices) + always ON devices (hubs + rasp.pi)
+            'azka-laptop',... % Azka Laptop
+            'azka-PC',... % Azka PC
+            'azka-monitor1-iiyama',... % Azka Monitor1(iiyama)
+            'azka-monitor2-phillips',... % Azka Monitor2 (Philips)
+            'brian-laptop',... % Base station (Brian Laptop)
+            'brian-monitor1-old',... % Brian's Monitor1(HP_old)
+            'brian-monitor2-new',... % Brian's Monitor2(HP_new)
+            'switch-Linksys',...% LinkSys Switch)
+            'laura-monitor1-philips', ... % Laura Monitor1 (Philips)
+            'laura-monitor2-iiyama', ... % Laura Monitor2 (iiyama)
+            'laura-laptop-docking', ... % Laura Docking Laptop
+            'michel-pc-thinclient', ... % 564 - Michel Thin client PC
+            'michel-screen', ... % 564 - Michel Screen
+            'room562-ceiling-lighting', ... % 562 - Alexander Lighting
+            'alexander-aggregated', ... % 562 - Alexander Aggregated all devices
+            'alexander-pc', ... % 562 - Alexander PC
+            'alexander-monitor-1', ... % 562 - Alexander Monitor-1
+            'alexander-monitor-2', ... % 562 - Alexander Monitor-2
+            'alexander-laptop', ... % 562 - Alexander Laptop
+            'alexander-speaker', ... % 562 - Alexander Set of speaker
+            'alexander-printer', ...      % 562 - Alexander printer
+            'room564-ceiling-lighting' % 564 ceiling lighting
+    };
+end
+

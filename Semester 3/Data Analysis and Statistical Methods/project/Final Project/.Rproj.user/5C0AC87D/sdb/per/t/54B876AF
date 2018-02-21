@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(dplyr)\nlibrary(plyr) \nlibrary(ggplot2)\n\n#load dataframe and omit values that contain NA\ndf <- na.omit(read.csv(\"data8(1).csv\"))\n#rename the column\ndf <- rename(df,c(\"COS.60\" = \"COS_60\", \"CO2.60\" = \"CO2_60\", \n                  \"CO.60\" = \"CO_60\", \"H2O.60\" = \"H2O_60\",\n                  \"COS.7\" = \"COS_7\",\"CO2.7\" = \"CO2_7\",\n                  \"CO.7\" = \"CO_7\",\"H2O.7\" = \"H2O_7\"))\n\n#construct all variables of date into a single string\nstr_dateformat <- \"%d-%m-%Y %H:%M:%S\"\nstr_date <- paste(df$day,df$mon,df$yr, sep = \"-\")\nstr_time <- paste(df$hr,0,0, sep = \":\")\nstr_datetime <- paste(str_date,str_time,sep = \" \")\n\n#add new datetime variable to data frame\ndf$datetime = as.POSIXct(str_datetime, format=str_dateformat)\n\n#add column season to group the record by season\ndf$season <- ifelse(df$mon %in% c(1,2,12),\"winter\", \n                    ifelse(df$mon %in% 3:5, \"spring\", \n                    ifelse(df$mon %in% 6:8, \"summer\", \"autumn\")))\n\ndf$seasonid <- ifelse(df$mon %in% c(1,2,12),1, \n                    ifelse(df$mon %in% 3:5, 2, \n                           ifelse(df$mon %in% 6:8, 3, 4)))\n\n#df$monthname <- month.abb[df$mon]\n",
+    "created" : 1508405521941.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2917317477",
+    "id" : "54B876AF",
+    "lastKnownWriteTime" : 1508422701,
+    "last_content_update" : 1508422701175,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Analysis and Statistical Methods/project/Final Project/load_data.R",
+    "project_path" : "load_data.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

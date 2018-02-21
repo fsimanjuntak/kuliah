@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "ptm <- proc.time()\n\nlibrary(rpart)\t\t\t\t        # Popular decision tree algorithm\nlibrary(rattle)\t\t\t\t\t# Fancy tree plot\nlibrary(rpart.plot)\t\t\t\t# Enhanced tree plots\nlibrary(RColorBrewer)\t\t\t\t# Color selection for fancy tree plot\nlibrary(party)\t\t\t\t\t# Alternative decision tree algorithm\nlibrary(partykit)\t\t\t\t# Convert rpart object to BinaryTree\nlibrary(caret)\t\t\t\t\t# Just a data source for t\ntree.2 <- rpart(BaseFormula,x.train)\t\t\t# A more reasonable tree\nx.evaluate$predictionTree <- predict(tree.2, newdata = x.evaluate, type = \"vector\")\n\nx.evaluate$predictionTreeString[x.evaluate$predictionTree==1]=\"Buy\"\nx.evaluate$predictionTreeString[x.evaluate$predictionTree==2]=\"NotBuy\"\n\nx.evaluate$correctTree <- x.evaluate$predictionTreeString == x.evaluate$SaleStringWithoutConvertingToFactor\nprint(paste(\"% of predicted classifications correct\", mean(x.evaluate$correctTree)))\n\nx.evaluate$probabilitiesTree <- predict(tree.2, newdata = x.evaluate, type = \"prob\")[,1]\n\nTreeOutput <- makeLiftPlot(x.evaluate$probabilitiesTree,x.evaluate,\"Tree\")\n\nTimeAux <- proc.time() - ptm \nTreeOutput$TimeElapsed <- TimeAux[3]\nTreeOutput$PercCorrect <- mean(x.evaluate$correctTree)*100\nrm(TimeAux)\n\n#update machine laerning properties\nnewmachinelearningproperties <- getMachineLearningProperties(\"Tree\",TreeOutput)\nmachinelearning.properties <- rbind(machinelearning.properties,newmachinelearningproperties)\n#Save again the training and evaluation set so the output of your model can be loaded later\nwrite.csv(machinelearning.properties, file = \"datasets/ml_performances\")\n",
+    "created" : 1509305878505.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4033906139",
+    "id" : "2951ADC",
+    "lastKnownWriteTime" : 1509305934,
+    "last_content_update" : 1509305934700,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Science and Marketing Analysis/Assignment2/project/project/final_code/10_Tree.R",
+    "project_path" : "final_code/10_Tree.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

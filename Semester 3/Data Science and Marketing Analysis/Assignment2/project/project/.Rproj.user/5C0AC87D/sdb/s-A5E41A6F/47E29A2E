@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "############ SVM ############ \nlibrary(e1071)\nptm <- proc.time()\nSession_SVM <- svm(BaseFormula , data = x.train, probability=T)\nsummary(Session_SVM)\n\nx.evaluate$predictionSVM <- predict(Session_SVM, newdata=x.evaluate, probability = T)\nx.evaluate$correctSVM <- x.evaluate$predictionSVM == x.evaluate$SaleString\nprint(paste(\"% of predicted classifications correct\", mean(x.evaluate$correctSVM)))\n\n# Extract the class probabilities.\nx.evaluate$probabilitiesSVM <- attr(x.evaluate$predictionSVM,\"probabilities\")[,2]\nSVMOutput <- makeLiftPlot(x.evaluate$probabilitiesSVM,x.evaluate,\"SVM\")\n\nTimeAux <- proc.time() - ptm \nSVMOutput$TimeElapsed <- TimeAux[3]\nSVMOutput$PercCorrect <- mean(x.evaluate$correctSVM)*100\nrm(TimeAux)\n\n#update machine laerning properties\nnewmachinelearningproperties <- getMachineLearningProperties(\"SVM\",SVMOutput)\nmachinelearning.properties <- rbind(machinelearning.properties,newmachinelearningproperties)\n#Save again the training and evaluation set so the output of your model can be loaded later\nwrite.csv(machinelearning.properties, file = \"datasets/ml_performances\")\n\n\n",
+    "created" : 1509308778596.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4177045442",
+    "id" : "47E29A2E",
+    "lastKnownWriteTime" : 1509308840,
+    "last_content_update" : 1509308840750,
+    "path" : "~/Desktop/Kuliah/Semester 3/Data Science and Marketing Analysis/Assignment2/project/project/final_code/05_SVM.R",
+    "project_path" : "final_code/05_SVM.R",
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

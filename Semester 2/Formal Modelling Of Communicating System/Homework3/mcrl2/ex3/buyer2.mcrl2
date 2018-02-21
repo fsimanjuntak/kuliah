@@ -1,0 +1,15 @@
+act
+   giveEnergyBar, giveChocolate, giveWater;
+   insert, get, mint:Nat;
+
+proc
+   VM(i:Nat) = get(i).((i == 5)->giveEnergyBar <>
+               (i == 10)->giveChocolate <>
+               giveWater).VM(i);
+   User(n:Nat) = insert(n).VM(n).User(n);
+
+init
+   allow({mint, giveEnergyBar, giveChocolate, giveWater},
+         comm({insert|get->mint},
+         User(10)||VM(10))
+   );

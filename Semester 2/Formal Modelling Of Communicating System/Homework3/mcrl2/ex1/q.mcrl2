@@ -1,0 +1,11 @@
+act
+   a, b, c;
+
+proc
+   Q  = a.Q1;
+   Q1 = b.Q2 + c.Q;
+   Q2 = a.Q3;
+   Q3 = b.Q + c.Q2;
+
+init
+   Q;

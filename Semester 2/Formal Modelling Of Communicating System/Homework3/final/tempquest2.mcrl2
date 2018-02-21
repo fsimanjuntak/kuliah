@@ -1,0 +1,19 @@
+act
+  ins, acc, coin : Nat;
+  giveItem, takeItem, ready : Nat;
+  returnChange : Nat;
+
+proc
+  U(n : Nat, m : Nat) = ins(n).takeItem(m).U(n, m);
+  M = sum n : Nat.acc(n).(
+      (n == 5) -> giveItem(1) <> (
+      (n == 10) -> (giveItem(2) + (giveItem(1) || returnChange(5))) <> (
+      (n == 15) -> (giveItem(3) + (giveItem(1) || returnChange(10)) + (giveItem(2) || returnChange(5)))
+    ))).M;
+
+init
+  allow ({ coin, ready },
+    comm({ ins | acc -> coin, giveItem | takeItem -> ready },
+      U(10, 10) || M
+    )
+  );

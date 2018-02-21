@@ -1,0 +1,13 @@
+act
+ ins, acc, giveItem, takeItem, coin, ready;
+proc
+ U = ins.takeItem.U; 
+ M = acc.giveItem.M;
+
+init
+ allow ({coin, ready},
+   comm (
+        {ins|acc -> coin, giveItem|takeItem -> ready},
+          U || M
+    )
+);

@@ -1,0 +1,13 @@
+act
+   insert5, insert10, insert15, get5, get10, get15, giveChocolate, giveEnergyBar, giveWater,
+   mint5, mint10, mint15;
+
+proc
+   VM   = (get5.giveEnergyBar + get10.giveChocolate + get15.giveWater).VM;
+   User = insert10.User;
+
+init
+   allow ({mint5, mint10, mint15, giveEnergyBar, giveChocolate, giveWater},
+      comm({insert5|get5->mint5, insert10|get10->mint10, insert15|get15->mint15},
+      User||VM)
+   );

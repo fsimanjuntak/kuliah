@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "k=5\nm1 = c(1+k,6+k)\nm2 = c(12+k,4+k)\n\nM <- cbind(m1,m2)\n\ncov(M)\n\n",
+    "created" : 1511960981222.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3767450081",
+    "id" : "CAAB22B0",
+    "lastKnownWriteTime" : 2334675641770011745,
+    "last_content_update" : 1511968024361,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
